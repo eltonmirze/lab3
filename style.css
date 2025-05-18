@@ -1,151 +1,175 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+list-style: none;
+font-family: "Montserrat", sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f2f2f2;
+font-size: 16px;
+color: #e8e0e0;
+interpolate-size: allow-keywords;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 30px auto;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+.semi-bold {
+font-weight: 500;
+font-size: 16px;
 }
 
-.sidebar {
-    flex: 1;
-    min-width: 300px;
-    background-color: #0B5351;
-    color: white;
-    padding: 20px;
-    border-radius: 15px 0 0 15px;
-}
-
-.main-content {
-    flex: 2;
-    padding: 30px;
-}
-
-.highlight {
-    color: #0B5351;
-}
-
-.title-line {
-    margin: 10px 0 30px 0;
-    height: 3px;
-    background-color: #0B5351;
-    border: none;
-    width: 100px;
-    margin-bottom: 50px;
-}
-
-.accordion-item {
-    margin-bottom: 15px;
-}
-
-.accordion-btn {
+.icon img{
     width: 100%;
-    padding: 12px 15px;
-    background-color: #117572;
-    color: white;
-    text-align: left;
-    border: none;
-    outline: none;
+    height: 100%;
+}
+
+.text {
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    }
+    
+    .text:hover{
+        background-color: #56a2c7;
+        color: black !important;
+        padding: 5px;
+    }
+
+.CV {
+width: 900px;
+height: auto;
+display: flex;
+margin: 0 auto;
+border-radius: 20px;
+padding: 25px;
+}
+
+.CV .CV_left {
+width: 320px;
+background: #171e69;
+padding: 25px;
+border-radius: 20px;
+}
+
+.CV .CV_left .CV_profile {
+width: 50%;
+border-radius: 50%;
+margin: 0 auto;
+height: 130px;
+outline: 2px solid #fff;
+}
+
+.CV .CV_left .CV_profile img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 50%;
+}
+
+.CV .CV_left .CV_content {
+padding: 0 25px;
+}
+
+.CV .title {
+margin-bottom: 20px;
+}
+
+.CV .CV_left .text {
+color: #fff;
+}
+
+.CV .CV_left .regular {
+color: #b1eaff;
+}
+
+.CV .CV_item {
+padding: 25px 0;
+border-bottom: 2px solid #8d820e;
+}
+.CV .CV_left ul li {
+display: flex;
+margin-bottom: 10px;
+align-items: center;
+}
+
+.CV .CV_left ul li .data {
+color: #c4ffb1;
+}
+
+.CV .CV_left .CV_skills ul li {
+margin-bottom: 10px;
+color: #b1eaff;
+}
+
+ul img{
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 10px !important;
+}
+
+
+.CV .CV_left .CV_social .text {
+color: #fff;
+margin-bottom: 3px;
+}
+
+.CV .CV_right {
+width: 600px;
+background: #211a11;
+padding: 25px;
+border-radius: 20px;
+margin-left: 5px;
+}
+
+.CV .CV_right .text {
+color: #0bb5f4;
+}
+
+.CV .CV_right .CV_work ul,
+.CV .CV_right .CV_education ul {
+padding-left: 40px;
+overflow: hidden;
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.CV .CV_right ul li {
+position: relative;
+padding: 10px;
+}
+
+.CV .CV_right ul li .info {
+margin-bottom: 20px;
+}
+
+.CV .CV_right ul li:last-child .info {
+margin-bottom: 0;
+}
+
+button{
     font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 8px;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btn-icon {
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
-}
-
-.accordion-btn:hover {
-    background-color: #249e9a;
-}
-
-.accordion-panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out, padding 0.35s ease-in-out;
-    padding: 0 15px;
-    background-color: #249e9a;
-    border-radius: 0 0 8px 8px;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.accordion-panel ul li, p{
-    color: white;
-}
-
-.accordion-panel.active {
-    max-height: 800px; /* We give a value large enough according to the content */
-    padding: 15px 15px;
-    overflow: hidden;
-}
-
-.icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-    vertical-align: middle;
-}
-
-.profile-picture {
-    display: block;
-    margin: 0 auto 20px auto;
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid white;
-}
-
-.edit-button {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: #117572;
-    color: white;
-    transition: background-color 0.3s;
+    padding: 8px 12px;
+    background: #205dc0;
     border: none;
-    padding: 10px 20px;
-    font-weight: bold;
     cursor: pointer;
-    border-radius: 10px;
-    z-index: 999;
+    color: #fff;
 }
 
-.edit-button:hover {
-    background-color: #249e9a;
-}
-
-.main-content {
-    position: relative;
-}
-
-[contenteditable="true"] ul li, p{
-    background-color: transparent !important;
-    outline: none;
-    color: white !important;
+button:hover{
+    opacity: 0.8;
 }
 
 
+.CV .CV_right ul li .date {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    }
